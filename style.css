@@ -1,0 +1,21 @@
+#maintitle {
+    text-align: center;
+}
+
+button {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 3px, solid, grey;
+    background-color: white;
+    transition: 0.5s;
+    position: relative;
+}
+
+button:hover {
+    cursor: pointer;
+    color: white;
+    border: 3px, solid, rgb(29, 99, 136);
+    background-color: rgb(57, 162, 219);
+    transition-duration: 0.5s;
+} 
