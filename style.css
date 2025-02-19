@@ -2,20 +2,32 @@
     text-align: center;
 }
 
-button {
+.input-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.input-buttons button,
+.input-buttons label {
     height: 100px;
     width: 100px;
     border-radius: 50%;
     border: 3px, solid, grey;
     background-color: white;
     transition: 0.5s;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-button:hover {
+.input-buttons button:hover,
+.input-buttons label:hover {
     cursor: pointer;
     color: white;
     border: 3px, solid, rgb(29, 99, 136);
     background-color: rgb(57, 162, 219);
     transition-duration: 0.5s;
-} 
+}
