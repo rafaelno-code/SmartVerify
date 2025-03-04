@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import os
 from model import predict_image
 
@@ -7,10 +7,7 @@ app = Flask(__name__)
 # Optional root route to avoid "no data" issues on GET /
 @app.route('/', methods=['GET'])
 def home():
-    return '''
-    <h1>Smart Age App</h1>
-    <p>POST an image to <code>/predict</code> to get age predictions.</p>
-    '''
+    return render_template('index.html')
 
 @app.route('/predict', methods=['POST'])
 def predict():
