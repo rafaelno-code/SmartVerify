@@ -1,4 +1,4 @@
-document.querySelector("#input-buttons button").addEventListener("click", predict);
+document.querySelector("#input-buttons").addEventListener("click", predict);
 
 function predict() {
     const imageInput = document.getElementById('imageInput');//can change name
