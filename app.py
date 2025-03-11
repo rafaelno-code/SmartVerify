@@ -17,7 +17,7 @@ def predict():
         return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files['image']
-    file_path = "temp.png"
+    file_path = "temp.png" #Change this line to the uploaded image by the user
     file.save(file_path)
     print(f"Saved image to {file_path}", flush=True)
 
