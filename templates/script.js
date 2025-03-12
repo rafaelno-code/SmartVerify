@@ -1,3 +1,19 @@
+document.getElementById("upload").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+    
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        document.getElementById("imagePreview").src = e.target.result;
+        document.getElementById("imagePreview").style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+});
+
+
 document.querySelector("#input-buttons").addEventListener("click", predict);
 
 function predict() {
