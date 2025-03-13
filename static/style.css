@@ -58,3 +58,8 @@ body {
 #upload {
     display: none;
 }
+
+#imagePreview {
+    height: 200px;
+    width: 250x;
+}
