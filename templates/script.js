@@ -1,6 +1,10 @@
-document.getElementById("upload").addEventListener("change", function(event) {
+document.getElementById("uploadBtn").addEventListener("click", function() { 
+    document.getElementById("imageInput").click();
+});
+
+document.getElementById("imageInput").addEventListener("change", function(event) { 
     const file = event.target.files[0];
-    
+
     if (!file) return;
 
     const reader = new FileReader();
@@ -11,19 +15,17 @@ document.getElementById("upload").addEventListener("change", function(event) {
     };
 
     reader.readAsDataURL(file);
+
+    predict(file); 
 });
 
 
-document.querySelector("#input-buttons").addEventListener("click", predict);
-
-function predict() {
-    const imageInput = document.getElementById('imageInput');//can change name
-    const file = imageInput.files[0];
-
+function predict(file) {
     if (!file) {
         alert("Please select an image first.");
         return;
     }
+
     const formData = new FormData();
     formData.append('image', file);
 
@@ -33,11 +35,20 @@ function predict() {
     })
     .then(response => response.json())
     .then(data => {
-        //can change name
-        document.getElementById('result').textContent = `Prediction: ${data.class} (Confidence: ${data.confidence.toFixed(2)})`;
+        document.getElementById('resultText').textContent = `Prediction: ${data.class} (Confidence: ${data.confidence.toFixed(2)})`;
+        document.body.style.overflow = "hidden";  // Lock scrolling
+        document.getElementById("resultSection").style.display = "block"; // Show results
     })
     .catch((error) => {
         console.error('Error:', error);
-        document.getElementById('result').textContent = 'An error occurred while processing the image.';
+        document.getElementById('resultText').textContent = 'An error occurred while processing the image.';
+        document.getElementById("resultSection").style.display = "block";
     });
 }
+
+document.getElementById("backBtn").addEventListener("click", function() {
+    document.body.style.overflow = "auto"; // Unlock scrolling
+    document.getElementById("resultSection").style.display = "none"; // Hide results
+    document.getElementById("imagePreview").style.display = "none"; // Hide image preview
+    document.getElementById('resultText').textContent = ""; // Clear result text
+});
