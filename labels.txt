@@ -1,2 +1,2 @@
-0 AI Images
-1 Non AI Images
+AI Image
+Normal Image
