@@ -1,6 +1,6 @@
 # Smart Age App (Local Installation)
 
-This project uses a **Keras model** exported from Google Teachable Machine (`keras_model.h5`) to classify images by age range. Below are instructions for setting up a **local** Python environment, installing dependencies, and running the Flask application.
+This project uses a **Keras model** exported from Google Teachable Machine (`keras_model.h5`) to classify images' authenticity. Below are instructions for setting up a **local** Python environment, installing dependencies, and running the Flask application.
 
 ---
 
